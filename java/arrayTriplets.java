@@ -24,7 +24,7 @@ Sample Output 1:
 
 import java.util.*;
 
-public class arrayTriplets {
+public class ArrayTriplets {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int len = scanner.nextInt();

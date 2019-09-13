@@ -4,7 +4,7 @@ Program that identifies whether a number N is prime or not.  If it is not, it re
 
 import java.util.*;
 
-class primeFinder {
+class PrimeFinder {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         long N = scanner.nextLong();

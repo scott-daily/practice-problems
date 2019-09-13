@@ -19,7 +19,7 @@ Sample Output 1:
 
 import java.util.*;
 
-public class circleArray {
+public class CircleArray {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String numbers = scanner.nextLine();

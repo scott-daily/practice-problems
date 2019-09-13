@@ -20,7 +20,7 @@ Sample Output 1:
 
 import java.util.*;
 
-class swapCols {
+class SwapCols {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int rows = scanner.nextInt();

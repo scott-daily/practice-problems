@@ -19,7 +19,7 @@ Sample Output 1:
 
 import java.util.*;
 
-class cubicRoots {
+class CubicRoots {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int a = scanner.nextInt();

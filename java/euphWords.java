@@ -20,7 +20,7 @@ Sample Output 1:
 
 import java.util.*;
 
-public class euphWords {
+public class EuphWords {
     public static void main(String[] args) {
         
         Scanner scanner = new Scanner(System.in);

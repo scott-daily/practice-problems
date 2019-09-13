@@ -27,7 +27,7 @@ Sample Output 1:
 
 import java.util.*;
 
-class arrayRotate {
+class ArrayRotate {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int rowSize = scanner.nextInt();

@@ -10,7 +10,7 @@ Output the longest word. If there are several such words, you should output the 
 
 import java.util.*;
 
-class longestWord {
+class LongestWord {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();

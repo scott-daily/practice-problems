@@ -14,7 +14,7 @@ selection sort.
 
 import java.util.*;
 
-public class stopWatchTest {
+public class StopWatchTest {
     public static void main(String args[]) {
         SelectionSort sortObj = new SelectionSort();
         int arr[] = new int[100000];
@@ -25,7 +25,7 @@ public class stopWatchTest {
             arr[i] = randomNum;
         }
 
-        stopWatch clock = new stopWatch();
+        StopWatch clock = new StopWatch();
 
         clock.start();
         sortObj.sort(arr);
@@ -34,7 +34,7 @@ public class stopWatchTest {
     }
 }
 
-class stopWatch {
+class StopWatch {
     private long startTime;
     private long endTime;
 

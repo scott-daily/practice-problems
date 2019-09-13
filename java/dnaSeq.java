@@ -11,7 +11,7 @@ Note, string can be empty or contain only a single character.
 
 import java.util.*;
 
-class dnaSeq {
+class DnaSeq {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String dnaSeq = scanner.nextLine();

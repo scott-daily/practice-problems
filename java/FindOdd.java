@@ -15,10 +15,10 @@ public class FindOdd {
             count++;
           }
         }
-      if (count % 2 != 0) {
-        result = a[i];
-        break;
-      }
+        if (count % 2 != 0) {
+          result = a[i];
+          break;
+        }
       } 
     return result;
     }

@@ -39,7 +39,7 @@ import java.util.*;
                 }
             }
         }
-
+        
         final double finalKey = new Double(key);
         double[] result = Arrays.stream(arr).filter(val -> val != finalKey).toArray(); 
       

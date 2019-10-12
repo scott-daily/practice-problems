@@ -12,13 +12,18 @@ public class PigLatin {
         String[] resultArray = new String[inputArray.length];
 
         for (int i = 0; i < inputArray.length; i++) {
-            resultArray[i] = inputArray[i].substring(1, inputArray[i].length()) + inputArray[i].charAt(0) + "ay";
+            if (Character.isLetter(inputArray[i].charAt(0)) == false) {
+                resultArray[i] = inputArray[i].charAt(0) + "";
+            }
+            else {
+                resultArray[i] = inputArray[i].substring(1, inputArray[i].length()) + inputArray[i].charAt(0) + "ay";
+            }
         }
         return String.join(" ", resultArray);
     }
 
     public static void main(String[] args) {
-        String test = "Pig latin is cool";
+        String test = "O tempora o mores !";
 
         System.out.println(pigIt(test));
     }

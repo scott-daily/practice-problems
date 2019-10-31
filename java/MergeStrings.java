@@ -10,7 +10,7 @@ part 2 = tinary
 Example Output: 
 true
 */
-import java.util.*;
+import java.util.Arrays;
 
 public class MergeStrings {
     public static boolean isMerge(String s, String part1, String part2) {
@@ -29,7 +29,7 @@ public class MergeStrings {
         if (!subInString(s,part1,part2)) {
             return false;
         }
-        
+
        return true;
     }
 

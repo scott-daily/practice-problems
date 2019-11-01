@@ -1,7 +1,7 @@
 /*
 Given a string of at least two positive numbers, the sum of the digits of each number in the string is called it's weight.  
 Find the two numbers whose difference of "weights" is smallest.
-If two pairs of numbers have equal weights, then return the pair with the lower weight. 
+If two pairs of numbers have equal differences, then return the pair with the lower weight. 
 If both of these are equal, then return the pair with the lowest indexes.
 
 Return an int[][] array with two sub arrays, both containing the following:

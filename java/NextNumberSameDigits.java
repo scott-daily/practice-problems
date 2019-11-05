@@ -7,7 +7,7 @@ Create a function that takes a positive integer number and returns the next bigg
 If no bigger number can be made, return -1:
 6 ==> -1
 333 ==> -1
-765 ==> -1
+764 ==> -1
 */
 import java.util.*;
 import java.util.Collections;

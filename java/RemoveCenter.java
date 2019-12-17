@@ -15,11 +15,11 @@ public class RemoveCenter {
 
         if (input.length() % 2 == 0) {
             int midPoint = (input.length() / 2) - 1;
-            System.out.println(input.substring(0, midPoint) + input.substring(midPoint+2));
+            System.out.println(input.substring(0, midPoint) + input.substring(midPoint + 2));
         }
         else {
             int midPoint = input.length() / 2;
-            System.out.println(input.substring(0,midPoint) + input.substring(midPoint + 1));
+            System.out.println(input.substring(0, midPoint) + input.substring(midPoint + 1));
         }
     }
 }

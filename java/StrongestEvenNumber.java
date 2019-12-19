@@ -8,38 +8,25 @@ Constraints: 1 <= n < m <= INT_MAX
 */
 public class StrongestEvenNumber {
     public static int strongestEven(int n, int m) {
+                                                                
+        int currentBest = 0;
+        int highCount = 0;
 
-        int count = 0;
-        int highestCount = 0;
-        int currentStrongest = 0;
+        if (n % 2 != 0) {
+            n = n + 1;
+        }
         
-        for (int i = n; i <= m; i++) {
-            boolean tempStillEven = true;
-            int temp = i;
-            if (temp % 2 == 0) {
-                while (tempStillEven && temp != 1) {
-                    if (temp % 2 == 0) {
-                        temp = temp / 2;
-                        count++;
-                    }
-                    else {
-                        tempStillEven = false;
-                        count = 0;
-                    }
-                    if (temp % 2 != 0) {
-                        if (count > highestCount) {
-                            highestCount = count;
-                            currentStrongest = i;
-                            count = 0;
-                            tempStillEven = false;
-                        }
-                    }
-                }
+        for (int i = n; i <= m; i += 2) {
+            int iCount = Integer.numberOfTrailingZeros(i);
+            if (Math.max(iCount, highCount) == iCount) {
+                highCount = iCount;
+                currentBest = i;
             }
         }
-        return currentStrongest;
+        
+        return currentBest;
     }
     public static void main(String[] args) {
-        System.out.println(strongestEven(1,887344883));
+        System.out.println(strongestEven(737403836,1941965989));  // expected: 1073741824
     }
 }

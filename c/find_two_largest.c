@@ -5,7 +5,6 @@ by largest & second_largest, respectively.
 */
 #include <stdio.h>
 
-
 int main()
 {
     void find_two_largest(int a[], int n, int *largest, int *second_largest);

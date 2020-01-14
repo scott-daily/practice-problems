@@ -45,6 +45,14 @@ class VectorStats {
             
             return valueBin;
     }
+
+    static void printStats(const StatsStruct &container) 
+    {
+        std::cout << "smallest: " << container.smallest << std::endl;
+        std::cout << "largest: " << container.largest << std:: endl;
+        std::cout << "mean: " << container.mean << std::endl;
+        std::cout << "median: " << container.median;
+    }
 };
 
 int main()
@@ -53,9 +61,5 @@ int main()
     VectorStats statsTest;
     VectorStats::StatsStruct testStruct; 
     testStruct = statsTest.calculateStats(testVect);
-
-    std::cout << "smallest: " << testStruct.smallest << std::endl;
-    std::cout << "largest: " << testStruct.largest << std:: endl;
-    std::cout << "mean: " << testStruct.mean << std::endl;
-    std::cout << "median: " << testStruct.median << std::endl;
+    VectorStats::printStats(testStruct);
 }

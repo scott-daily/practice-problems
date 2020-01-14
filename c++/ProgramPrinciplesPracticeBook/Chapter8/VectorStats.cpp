@@ -13,23 +13,14 @@ class VectorStats {
 
     struct StatsStruct
             {
-            int smallest;
-            int largest;
+            int smallest = INT_MAX;
+            int largest = INT_MIN;
             double mean;
-            double median;
+            int median;
             };
 
         StatsStruct calculateStats(const std::vector<int> &vect) 
         {
-
-            struct StatsStruct
-            {
-            int smallest = INT_MAX;
-            int largest = INT_MIN;
-            double mean = 0.0;
-            int median;
-            };
-
             VectorStats::StatsStruct valueBin;
             std::vector<int> orderedValues;
 

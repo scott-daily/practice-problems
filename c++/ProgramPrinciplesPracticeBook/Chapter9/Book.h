@@ -26,8 +26,8 @@ class Book {
         bool getStatus() const { return status; }
 
         // modifying operations
-        void checkOut(Book b);
-        void checkIn (Book b);
+        void checkOut();
+        void checkIn ();
 
     private:
         Genre g;

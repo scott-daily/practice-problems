@@ -21,15 +21,19 @@ Book::Book(Genre g, std::string ISBN, std::string title, std::string author, std
     if (!is_ISBN(ISBN)) throw std::invalid_argument("ISBN is not valid.");
 }
 
-void Book::checkOut(Book b) 
+void Book::checkOut() 
 {
-    if (status) { status = false; }
+    if (status) {
+         status = false; 
+    }
     else { throw std::invalid_argument("Book is already checked out."); }
 }
 
-void Book::checkIn(Book b) 
+void Book::checkIn() 
 {
-    if (!status) { status = true; }
+    if (!status) { 
+        status = true; 
+    }
     else { throw std::invalid_argument("Book is already checked in."); }
 }
 
@@ -39,23 +43,26 @@ bool is_ISBN(std::string ISBN)
 
     if (ISBN.size() != 13) { return false; }
 
-    int total{0};
-
-    for (int i = 1; i < ISBN.size()+1; i++) {
-        if (i%2 != 0) {
-            total += (((int)ISBN[i-1] - 48) * 1);
+    int total = 0;
+    for (int i = 0; i < ISBN.size()-1; i++) {
+        if (i%2 == 0) {
+            total += (((int)ISBN[i] - 48) * 1);
         }
         else {
-            total += (((int)ISBN[i-1] - 48) * 3);
+            total += (((int)ISBN[i] - 48) * 3);
         }
     }
 
-    if (total % 10 == 0) 
-    {
-        if (((int)ISBN[ISBN.size()-1] - 48) == 0) { return true; }
+    if (total % 10 == 0) {
+        if (((int)ISBN[12] - 48) == 0) { 
+            return true; }
+        else { 
+            return false; }
     }
-    else {
-        if (((int)ISBN[ISBN.size()-1] - 48) == (10 - (total % 10))) { return true;}
+    else if (((int)ISBN[12] - 48) == (10 - (total % 10))) {
+        return true;
+    } else { 
+        return false; 
     }
     return false;
 }

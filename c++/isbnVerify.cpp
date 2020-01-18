@@ -14,7 +14,7 @@ public:
 
         if (ISBN.size() != 13) { return false; }
 
-        int total{0};
+        int total = 0;
 
         for (int i = 0; i < ISBN.size()-1; i++) {
             if (i%2 == 0) {

@@ -12,28 +12,31 @@ public:
     {   
         ISBN.erase(std::remove(ISBN.begin(), ISBN.end(), '-'), ISBN.end());
 
-        if (ISBN.size() != 13) { return false; }
+    if (ISBN.size() != 13) { return false; }
 
-        int total = 0;
-
-        for (int i = 0; i < ISBN.size()-1; i++) {
-            if (i%2 == 0) {
-                total += (((int)ISBN[i] - 48) * 1);
-            }
-            else {
-                total += (((int)ISBN[i] - 48) * 3);
-            }
+    int total = 0;
+    for (int i = 0; i < ISBN.size()-1; i++) {
+        if (i%2 == 0) {
+            total += (((int)ISBN[i] - 48) * 1);
         }
-
-        if (total % 10 == 0) 
-        {
-            if (((int)ISBN[12] - 48) == 0) { return true; }
-            else { return false; }
+        else {
+            total += (((int)ISBN[i] - 48) * 3);
         }
-        else if (((int)ISBN[12] - 48) == (10 - (total % 10))) { return true;}
-            else { return false; }
-            
-        return false;
+    }
+
+    if (total % 10 == 0) {
+        if (((int)ISBN[12] - 48) == 0) { 
+            return true; }
+        else { 
+            return false; 
+        }
+    }
+    else if (((int)ISBN[12] - 48) == (10 - (total % 10))) {
+        return true;
+    } else { 
+        return false; 
+    }
+    return false;
     }
 };
 

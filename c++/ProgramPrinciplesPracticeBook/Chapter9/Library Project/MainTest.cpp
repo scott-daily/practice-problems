@@ -1,6 +1,6 @@
 #include "Book.h"
 #include "Patron.h"
-//#include "Library.h"
+#include "Library.h"
 #include <string>
 #include <iostream>
 #include <stdexcept>
@@ -19,16 +19,15 @@ std::cout << testBook->getStatus() << std::endl;
 testBook->checkIn();
 std::cout << testBook->getStatus() << std::endl;
 
-//Library *testLibrary = new Library("Best Library");
+Library *testLibrary = new Library("Best Library");
 Patron *testPatron = new Patron("Scott", "383743EZX");
 
 std::cout << *testPatron << std::endl;
 
-//testLibrary->returnBook(*testBook);
-//testLibrary->addPatron(*testPatron);
-//testLibrary->printBooks();
-//testLibrary->printPatrons();
-
+testLibrary->returnBook(*testBook);
+testLibrary->addPatron(*testPatron);
+testLibrary->printBooks();
+testLibrary->printPatrons();
 
 return 0;
 }

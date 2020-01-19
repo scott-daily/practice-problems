@@ -1,4 +1,6 @@
 #include "Library.h"
+#include "Patron.h"
+#include "Book.h"
 #include <string>
 #include <iostream>
 #include <stdexcept>
@@ -38,20 +40,22 @@ void Library::returnBook(Book b) {
 }
 
 void Library::checkoutBook(Book b, Patron p, std::string date) {
-    if(std::find(bookVect.begin(), bookVect.end(), b) == bookVect.end()) {
+    if (std::find(bookVect.begin(), bookVect.end(), b) == bookVect.end()) {
         throw std::invalid_argument("Book is not in the library");
     }
+    
     if (std::find(patronVect.begin(), patronVect.end(), p) == patronVect.end()) {
         throw std::invalid_argument("Patron is not at the library");
     }
+    
     if (p.getFee() != 0.0) {
         throw std::invalid_argument("Patron owes a fee.  The fee must be paid before checking out a book.");
     }
 
     Transaction trans = {b, p, date};
     transactionVect.emplace_back((Transaction(b, p, date)));
-
 }
+
 
 std::vector<Patron> Library::debtMembers() {
     if (patronVect.size() == 0) { std::cout << "There are no patrons" << std::endl; }
@@ -62,8 +66,8 @@ std::vector<Patron> Library::debtMembers() {
         if (p.getFee() > 0.0) {
             indebtedPatrons.push_back(p);
         }
-        return indebtedPatrons;
     }
+    return indebtedPatrons;
 }
 
 std::ostream& operator <<(std::ostream& os, const Library::Transaction& t)

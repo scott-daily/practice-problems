@@ -25,4 +25,5 @@ class Patron {
 
 bool owesFees(const Patron& p);
 std::ostream& operator<<(std::ostream& os, const Patron& p);
+bool operator ==(const Patron& a, const Patron& b);
 }

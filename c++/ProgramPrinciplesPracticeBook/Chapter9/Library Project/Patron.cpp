@@ -30,10 +30,13 @@ bool owesFees(const Patron& p) {
     }
 }
 
-std::ostream& operator <<(std::ostream& os, const Patron& p)
-{
+std::ostream& operator <<(std::ostream& os, const Patron& p) {
     return os << "userName: " << p.getUserName() << std::endl
                 << "Library ID: " << p.getLibraryID() << std::endl
                 << "Fees Owed: " << p.getFee() << std::endl;
+}
+
+bool operator ==(const Patron& a, const Patron& b) {
+    return a.getUserName() == b.getUserName();
 }
 }

@@ -1,8 +1,9 @@
 /*
-2. Write a function, char* findx(const char* s, const char* x), that finds the
-first occurrence of the C-style string x in s. Do not use any standard library
-functions. Do not use subscripting; use the dereference operator *
-instead.
+3. Write a function, int strcmp(const char* s1, const char* s2), that compares
+C-style strings. Let it return a negative number if s1 is lexicographically
+before s2, zero if s1 equals s2, and a positive number if s1 is lexicographically
+after s2. Do not use any standard library functions. Do not use
+subscripting; use the dereference operator * instead.
 */
 #include <iostream>
 #include <vector>
@@ -10,6 +11,49 @@ instead.
 
 class Chap18Ex {
 public:
+    static int strcmp(const char* s1, const char* s2) {
+        char* s1Copy = strdup(s1);
+        char* s2Copy = strdup(s2);
+        tolower(s1Copy);
+        tolower(s2Copy);
+
+        int s1Length = strlen(s1);
+        int s2Length = strlen(s2);
+
+        int smallestLength = 0;
+        if (s1Length > s2Length) {
+            smallestLength = s2Length;
+        }
+        else {
+            smallestLength = s1Length;
+        }
+
+        while (smallestLength > 0) {
+            if (*s1Copy < *s2Copy) {
+                return -1;
+            }
+            else if (*s1Copy > *s2Copy) {
+                return 1;
+            }
+            else {
+                if (smallestLength == 1) {
+                    return 0;
+                }
+                ++s1Copy;
+                ++s2Copy;
+                smallestLength--;
+            }
+        }
+    }
+
+    static void tolower(char* string) {
+        while(*string != '\0') {
+        if(*string >= 'A' && *string <= 'Z') {
+            *string = *string + 32;
+        }
+        ++string;
+        }
+    }
 
     static char* findx(const char* target, const char* word) { // Search for word in target
         if (strlen(target) < strlen(word)) {
@@ -73,18 +117,8 @@ public:
 };
 
 int main() {
-    char testTarget[] = {'Z','e','t','t','e', 'r', '\0'};
-    char testWord[] = {'t', 't', 'e', 'r', '\0'};
+    char testTarget[] = {'b', 'z', '\0'};
+    char testWord[] = {'b', 'z', '\0'};
 
-    char* getCopy = Chap18Ex::findx(testTarget,testWord);
-
-    if (getCopy != nullptr) {
-        while (*getCopy != '\0') {
-            std::cout << *getCopy << " ";
-            getCopy++;
-        }
-    }
-    else {
-        std::cout << "Not Found";
-    }
+    std::cout << strcmp(testTarget,testWord) << std::endl;
 }

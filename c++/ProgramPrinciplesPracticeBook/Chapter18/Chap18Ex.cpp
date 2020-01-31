@@ -1,16 +1,23 @@
 /*
-3. Write a function, int strcmp(const char* s1, const char* s2), that compares
-C-style strings. Let it return a negative number if s1 is lexicographically
-before s2, zero if s1 equals s2, and a positive number if s1 is lexicographically
-after s2. Do not use any standard library functions. Do not use
-subscripting; use the dereference operator * instead.
+5. Write a function, string cat_dot(const string& s1, const string& s2),
+that concatenates two strings with a dot in between. For example, cat_
+dot("Niels", "Bohr") will return a string containing Niels.Bohr.
 */
 #include <iostream>
 #include <vector>
 #include <cstring>
+#include <string>
 
 class Chap18Ex {
 public:
+    static std::string cat_dot(const std::string& s1, const std::string& s2) {
+        std::string dotInserted = s1;
+        dotInserted.push_back('.');
+        dotInserted.append(s2);
+        std::cout << dotInserted << std::endl;
+        return dotInserted;
+    }
+
     static int strcmp(const char* s1, const char* s2) {
         char* s1Copy = strdup(s1);
         char* s2Copy = strdup(s2);
@@ -117,8 +124,8 @@ public:
 };
 
 int main() {
-    char testTarget[] = {'b', 'z', '\0'};
-    char testWord[] = {'b', 'z', '\0'};
+    std::string first = "Niels";
+    std::string second = "Bohr";
 
-    std::cout << strcmp(testTarget,testWord) << std::endl;
+    std::cout << Chap18Ex::cat_dot(first,second) << std::endl;
 }

@@ -1,3 +1,7 @@
+/*
+Create a function that takes RGB values and converts them to their hexadecimal equivalent.
+Return this as a string.
+*/
 #include <iostream>
 #include <string>
 #include <sstream>

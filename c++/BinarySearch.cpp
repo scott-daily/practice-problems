@@ -3,7 +3,7 @@
 
 class BinarySearch {
 public:
-    static int binarySearch(std::vector<int>& intVector, int n) {
+    static int binarySearch(const std::vector<int>& intVector, const int n) {
         int min = 0;
         int max = intVector.size()-1;
 

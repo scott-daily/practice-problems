@@ -17,4 +17,4 @@ var binarySearch = function(array, n) {
         }
         return -1;
     }
-}
+};

@@ -2,9 +2,17 @@
 
 #include <vector>
 
+struct TreeNode
+{
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+};
+
 class inOrderTraversal {
 public:
-    vector<int> inorderTraversal(TreeNode* root) {
+    std::vector<int> inorderTraversal(TreeNode* root) {
         std::vector<int> inorderVect;
         if (root == nullptr) {
             return inorderVect;

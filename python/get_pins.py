@@ -43,8 +43,4 @@ def get_pins(observed):
     for element in itertools.product(*combo_list):
         result_list.append(''.join(element))
 
-    print(*result_list)
     return result_list
-
-observed = '12'
-get_pins(observed)

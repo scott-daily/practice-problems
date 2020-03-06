@@ -16,8 +16,6 @@ Result list should = [12, 11, 15, 13, 22, 21, 25, 23, 42, 41, 45, 43]
     │ 0 │
     └───┘
 '''
-from itertools import permutations
-from itertools import product
 import itertools
 
 def get_pins(observed):

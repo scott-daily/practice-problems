@@ -1,4 +1,4 @@
-'''How many numbers between 1 and 100 (inclusive) are divisible by 10 or 7?'''
+'''How many numbers between 1 and 100 (inclusive) are divisible by num1 or num2?'''
 
 x = 1
 
@@ -14,4 +14,4 @@ def permutations(num1, num2):
 
     return count
 
-print(permutations(7,10))
+print(permutations(5,8))

@@ -14,4 +14,4 @@ def permutations(num1, num2):
 
     return count
 
-print(permutations(5,8))
+print(permutations(4,9))

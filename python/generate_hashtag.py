@@ -30,4 +30,4 @@ def generate_hashtag(s):
 
     return hashtagged
 
-print(generate_hashtag("cat in the hat"))
+print(generate_hashtag("love the gym"))
